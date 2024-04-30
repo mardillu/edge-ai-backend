@@ -1,0 +1,17 @@
+#mod_rewrite on
+RewriteEngine on
+
+#Hotlinking Protection
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?adgeapi.mardillu.com/.*$ [NC]
+RewriteRule \.(js|css|jpg|gif|png|bmp|mp4|3gp|m4a|m4r|aac|mp3|ogg|wave)$ - [F]
+
+#PHP code in HTML file
+AddType fcgid-script .php .htm .html .phtml
+
+#Redirect httpsURLs to https
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+#Set document root to public
+RewriteRule ^(.*)$ public/$1 [L]
