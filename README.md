@@ -1,5 +1,17 @@
 # Edge AI Backend
 
+---
+
+### Check out the Frontend
+Checkout the frontend by [clicking here](https://github.com/mardillu/edge-ai-frontend)
+
+### Demo
+Ghanaians can test this out by dialing * 920*223# on their phones
+Other users can use [this interactive demo](https://edge.mardillu.com/simulate)
+or watch the recorded video at [https://edge.mardillu.com/field-test](https://edge.mardillu.com/field-test)
+
+---
+
 ## Inspiration
 Growing up in a resource-constrained community in a developing country, I realized the stark digital divide. While I was fortunate to receive an education, many, including my parents, did not. Their inability to speak English and lack of access to technologies like smartphones and the internet significantly limits their ability to benefit from advanced tools such as AI, which could dramatically improve daily tasks and access to information, like enhancing farming techniques to increase crop yields.
 
