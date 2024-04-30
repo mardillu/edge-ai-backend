@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Responses;
+namespace App\Services\Gemini\Responses;
 
 use UnexpectedValueException;
 

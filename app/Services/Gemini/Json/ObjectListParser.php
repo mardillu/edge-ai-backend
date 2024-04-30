@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Json;
+namespace App\Services\Gemini\Json;
 
 use RuntimeException;
 

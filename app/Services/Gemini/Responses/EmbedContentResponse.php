@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Responses;
+namespace App\Services\Gemini\Responses;
 
-use GeminiAPI\Resources\ContentEmbedding;
+use App\Services\Gemini\Resources\ContentEmbedding;
 
 class EmbedContentResponse
 {

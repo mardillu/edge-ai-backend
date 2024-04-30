@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Requests;
+namespace App\Services\Gemini\Requests;
 
 interface RequestInterface
 {

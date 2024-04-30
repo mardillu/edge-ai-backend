@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Resources;
+namespace App\Services\Gemini\Resources;
 
-use GeminiAPI\Enums\MimeType;
-use GeminiAPI\Enums\Role;
-use GeminiAPI\Traits\ArrayTypeValidator;
-use GeminiAPI\Resources\Parts\ImagePart;
-use GeminiAPI\Resources\Parts\PartInterface;
-use GeminiAPI\Resources\Parts\TextPart;
+use App\Services\Gemini\Enums\MimeType;
+use App\Services\Gemini\Enums\Role;
+use App\Services\Gemini\Traits\ArrayTypeValidator;
+use App\Services\Gemini\Resources\Parts\ImagePart;
+use App\Services\Gemini\Resources\Parts\PartInterface;
+use App\Services\Gemini\Resources\Parts\TextPart;
 
 class Content
 {

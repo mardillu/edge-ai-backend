@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Requests;
+namespace App\Services\Gemini\Requests;
 
-use GeminiAPI\Enums\ModelName;
-use GeminiAPI\Traits\ArrayTypeValidator;
-use GeminiAPI\Resources\Content;
+use App\Services\Gemini\Enums\ModelName;
+use App\Services\Gemini\Traits\ArrayTypeValidator;
+use App\Services\Gemini\Resources\Content;
 use JsonSerializable;
 
 use function json_encode;

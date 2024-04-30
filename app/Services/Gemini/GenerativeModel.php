@@ -2,20 +2,21 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI;
+namespace App\Services\Gemini;
 
 use BadMethodCallException;
 use CurlHandle;
-use GeminiAPI\Enums\ModelName;
-use GeminiAPI\Enums\Role;
-use GeminiAPI\Requests\CountTokensRequest;
-use GeminiAPI\Requests\GenerateContentRequest;
-use GeminiAPI\Requests\GenerateContentStreamRequest;
-use GeminiAPI\Responses\CountTokensResponse;
-use GeminiAPI\Responses\GenerateContentResponse;
-use GeminiAPI\Resources\Content;
-use GeminiAPI\Resources\Parts\PartInterface;
-use GeminiAPI\Traits\ArrayTypeValidator;
+use App\Services\Gemini\Enums\ModelName;
+use App\Services\Gemini\Enums\Role;
+use App\Services\Gemini\Requests\CountTokensRequest;
+use App\Services\Gemini\Requests\GenerateContentRequest;
+use App\Services\Gemini\Requests\GenerateContentStreamRequest;
+use App\Services\Gemini\Responses\CountTokensResponse;
+use App\Services\Gemini\Responses\GenerateContentResponse;
+use App\Services\Gemini\Resources\Content;
+use App\Services\Gemini\Resources\Parts\PartInterface;
+use App\Services\Gemini\Traits\ArrayTypeValidator;
+use App\Services\Gemini\ChatSession;
 use Psr\Http\Client\ClientExceptionInterface;
 
 class GenerativeModel

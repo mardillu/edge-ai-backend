@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI;
+namespace App\Services\Gemini;
 
-use GeminiAPI\Enums\ModelName;
-use GeminiAPI\Enums\Role;
-use GeminiAPI\Enums\TaskType;
-use GeminiAPI\Requests\EmbedContentRequest;
-use GeminiAPI\Resources\Content;
-use GeminiAPI\Resources\Parts\PartInterface;
-use GeminiAPI\Responses\EmbedContentResponse;
+use App\Services\Gemini\Enums\ModelName;
+use App\Services\Gemini\Enums\Role;
+use App\Services\Gemini\Enums\TaskType;
+use App\Services\Gemini\Requests\EmbedContentRequest;
+use App\Services\Gemini\Resources\Content;
+use App\Services\Gemini\Resources\Parts\PartInterface;
+use App\Services\Gemini\Responses\EmbedContentResponse;
 use Psr\Http\Client\ClientExceptionInterface;
 
 class EmbeddingModel

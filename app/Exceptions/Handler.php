@@ -2,7 +2,11 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -27,4 +31,19 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $e): Response|JsonResponse|RedirectResponse|\Symfony\Component\HttpFoundation\Response
+    {
+        // Check if request expects JSON (like an API call)
+        if ($request->expectsJson()) {
+            return response()->json([
+                "message" => "Oops, that didn't work. Please try again.",
+                'error_code' => ''
+            ], 500);
+        }
+
+        // Default render method for non-API calls
+        return parent::render($request, $e);
+    }
+
 }

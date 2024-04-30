@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Responses;
+namespace App\Services\Gemini\Responses;
 
-use GeminiAPI\Resources\Model;
+use App\Services\Gemini\Resources\Model;
 
 class ListModelsResponse
 {

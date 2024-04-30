@@ -1,22 +1,23 @@
 <?php
 namespace App\Http\Controllers;
 
-use GeminiAPI\Client;
-use GeminiAPI\Enums\HarmBlockThreshold;
-use GeminiAPI\Enums\HarmCategory;
-use GeminiAPI\Enums\Role;
-use GeminiAPI\GenerationConfig;
-use GeminiAPI\Resources\Content;
-use GeminiAPI\Resources\Parts\TextPart;
-use GeminiAPI\SafetySetting;
+use App\Services\Gemini\Client;
+use App\Services\Gemini\Enums\HarmBlockThreshold;
+use App\Services\Gemini\Enums\HarmCategory;
+use App\Services\Gemini\Enums\Role;
+use App\Services\Gemini\GenerationConfig;
+use App\Services\Gemini\Resources\Content;
+use App\Services\Gemini\Resources\Parts\TextPart;
+use App\Services\Gemini\SafetySetting;
+use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\DB;
 use App\Models\UssdStep;
-use HaoZiTeam\ChatGPT\V2 as ChatGPTV2;
-use HaoZiTeam\ChatGPT\V1 as ChatGPTV1;
-use Stichoza\GoogleTranslate\GoogleTranslate;
 use DateTime;
+use Psr\Http\Client\ClientExceptionInterface;
+use Stichoza\GoogleTranslate\Exceptions\LargeTextException;
+use Stichoza\GoogleTranslate\Exceptions\RateLimitException;
+use Stichoza\GoogleTranslate\Exceptions\TranslationRequestException;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class UssdController extends Controller
 {
@@ -186,10 +187,17 @@ class UssdController extends Controller
                     ->startChat()
                     ->withHistory($history);
 
-                $response = $chat->sendMessage(new TextPart($request->USERDATA));
-                $final_result = $response->text();
+                $trans = new GoogleTranslate();
+                $result = $trans->translate($request->USERDATA);
 
-                $lastUssdStep->update(['step_two' => $response->text(), 'page' => 1]);
+                try {
+                    $response = $chat->sendMessage(new TextPart($result));
+                    $final_result = GoogleTranslate::trans($response->text(), $trans->getLastDetectedSource() , 'en');
+                } catch (ClientExceptionInterface|TranslationRequestException|RateLimitException|LargeTextException $e) {
+                    $final_result = 'Oops, that did not work. Try again';
+                }
+
+                $lastUssdStep->update(['step_two' => $final_result, 'page' => 1]);
 
                 $pageContent = $this->getPageContent($final_result, 1);
 

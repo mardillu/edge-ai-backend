@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Resources;
+namespace App\Services\Gemini\Resources;
 
-use GeminiAPI\Traits\ArrayTypeValidator;
+use App\Services\Gemini\Traits\ArrayTypeValidator;
 
 class CitationMetadata
 {

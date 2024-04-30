@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Resources;
+namespace App\Services\Gemini\Resources;
 
-use GeminiAPI\Enums\HarmCategory;
-use GeminiAPI\Enums\HarmProbability;
+use App\Services\Gemini\Enums\HarmCategory;
+use App\Services\Gemini\Enums\HarmProbability;
 use JsonSerializable;
 
 class SafetyRating implements JsonSerializable

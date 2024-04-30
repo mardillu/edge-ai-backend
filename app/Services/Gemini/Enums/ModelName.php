@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Enums;
+namespace App\Services\Gemini\Enums;
 
 enum ModelName: string
 {

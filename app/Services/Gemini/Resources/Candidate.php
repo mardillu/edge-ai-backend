@@ -2,11 +2,14 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Resources;
+namespace App\Services\Gemini\Resources;
 
-use GeminiAPI\Enums\FinishReason;
-use GeminiAPI\Traits\ArrayTypeValidator;
+use App\Services\Gemini\Enums\FinishReason;
+use App\Services\Gemini\Enums\Role;
+use App\Services\Gemini\Traits\ArrayTypeValidator;
 use UnexpectedValueException;
+use App\Services\Gemini\Resources\Parts\TextPart;
+
 
 class Candidate
 {
@@ -61,8 +64,17 @@ class Candidate
             $candidate['safetyRatings'] ?? [],
         );
 
+        // check if $candidate contains a content array
+        if (!array_key_exists('content', $candidate) || !is_array($candidate['content'])) {
+            $content = new Content([
+                new TextPart('Oops, that did not work. Try again.'),
+            ], Role::User);
+        } else {
+            $content = Content::fromArray($candidate['content']);
+        }
+
         return new self(
-            Content::fromArray($candidate['content']),
+            $content,
             FinishReason::from($candidate['finishReason']),
             $citationMetadata,
             $safetyRatings,

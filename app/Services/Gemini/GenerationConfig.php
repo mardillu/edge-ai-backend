@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI;
+namespace App\Services\Gemini;
 
-use GeminiAPI\Traits\ArrayTypeValidator;
+use App\Services\Gemini\Traits\ArrayTypeValidator;
 use JsonSerializable;
 use UnexpectedValueException;
 

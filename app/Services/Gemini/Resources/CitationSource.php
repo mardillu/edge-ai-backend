@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Resources;
+namespace App\Services\Gemini\Resources;
 
 use JsonSerializable;
 

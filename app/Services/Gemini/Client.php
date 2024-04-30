@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI;
+namespace App\Services\Gemini;
 
 use BadMethodCallException;
 use CurlHandle;
-use GeminiAPI\ClientInterface as GeminiClientInterface;
-use GeminiAPI\Enums\ModelName;
-use GeminiAPI\Json\ObjectListParser;
-use GeminiAPI\Requests\CountTokensRequest;
-use GeminiAPI\Requests\EmbedContentRequest;
-use GeminiAPI\Requests\GenerateContentRequest;
-use GeminiAPI\Requests\GenerateContentStreamRequest;
-use GeminiAPI\Requests\ListModelsRequest;
-use GeminiAPI\Requests\RequestInterface;
-use GeminiAPI\Responses\CountTokensResponse;
-use GeminiAPI\Responses\EmbedContentResponse;
-use GeminiAPI\Responses\GenerateContentResponse;
-use GeminiAPI\Responses\ListModelsResponse;
+use App\Services\Gemini\ClientInterface as GeminiClientInterface;
+use App\Services\Gemini\Enums\ModelName;
+use App\Services\Gemini\Json\ObjectListParser;
+use App\Services\Gemini\Requests\CountTokensRequest;
+use App\Services\Gemini\Requests\EmbedContentRequest;
+use App\Services\Gemini\Requests\GenerateContentRequest;
+use App\Services\Gemini\Requests\GenerateContentStreamRequest;
+use App\Services\Gemini\Requests\ListModelsRequest;
+use App\Services\Gemini\Requests\RequestInterface;
+use App\Services\Gemini\Responses\CountTokensResponse;
+use App\Services\Gemini\Responses\EmbedContentResponse;
+use App\Services\Gemini\Responses\GenerateContentResponse;
+use App\Services\Gemini\Responses\ListModelsResponse;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
 use Psr\Http\Client\ClientExceptionInterface;

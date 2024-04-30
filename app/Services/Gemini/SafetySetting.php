@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI;
+namespace App\Services\Gemini;
 
-use GeminiAPI\Enums\HarmBlockThreshold;
-use GeminiAPI\Enums\HarmCategory;
+use App\Services\Gemini\Enums\HarmBlockThreshold;
+use App\Services\Gemini\Enums\HarmCategory;
 use JsonSerializable;
 
 use function json_encode;

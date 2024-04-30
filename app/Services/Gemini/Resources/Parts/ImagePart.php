@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Resources\Parts;
+namespace App\Services\Gemini\Resources\Parts;
 
-use GeminiAPI\Enums\MimeType;
+use App\Services\Gemini\Enums\MimeType;
 use JsonSerializable;
 
 use function json_encode;

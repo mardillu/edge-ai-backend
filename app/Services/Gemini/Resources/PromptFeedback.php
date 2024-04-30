@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Resources;
+namespace App\Services\Gemini\Resources;
 
-use GeminiAPI\Enums\BlockReason;
-use GeminiAPI\Traits\ArrayTypeValidator;
+use App\Services\Gemini\Enums\BlockReason;
+use App\Services\Gemini\Traits\ArrayTypeValidator;
 use JsonSerializable;
 
 class PromptFeedback implements JsonSerializable

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Responses;
+namespace App\Services\Gemini\Responses;
 
-use GeminiAPI\Traits\ArrayTypeValidator;
-use GeminiAPI\Resources\Candidate;
-use GeminiAPI\Resources\Parts\PartInterface;
-use GeminiAPI\Resources\Parts\TextPart;
-use GeminiAPI\Resources\PromptFeedback;
+use App\Services\Gemini\Traits\ArrayTypeValidator;
+use App\Services\Gemini\Resources\Candidate;
+use App\Services\Gemini\Resources\Parts\PartInterface;
+use App\Services\Gemini\Resources\Parts\TextPart;
+use App\Services\Gemini\Resources\PromptFeedback;
 use ValueError;
 
 class GenerateContentResponse

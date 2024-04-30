@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GeminiAPI\Traits;
+namespace App\Services\Gemini\Traits;
 
 use InvalidArgumentException;
 
